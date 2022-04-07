@@ -52,7 +52,6 @@ from functools import reduce, lru_cache, singledispatchmethod
 # non-generator versions of common funcs
 Map = lambda f,it: list(map(f,it))
 Filter = lambda f,it: list(filter(f,it))
-Sorted = lambda ls: list(sorted(ls))
 Reversed = lambda ls: list(reversed(ls))
 Zip = lambda *ls: list(zip(*ls))
 
