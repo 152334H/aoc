@@ -350,8 +350,8 @@ class SAT(list):
             for x in range(self.width):
                 self.sat[y+1][x+1] = self.sat[y][x+1] + self.sat[y+1][x] - self.sat[y][x] + self[y][x]
     def area(self, x1, y1, x2, y2):
-        if x1 > x2 or y1 > y2 or x1 < 0 or y1 < 0 or x2 >= self.width or y2 >= self.height: raise RuntimeError('Invalid region')
         x1,y1,x2,y2 = x1+1,y1+1,x2+1,y2+1
+        if x1 > x2 or y1 > y2 or x1 < 0 or y1 < 0 or x2 > self.width or y2 > self.height: raise RuntimeError('Invalid region')
         return self.sat[y2][x2] - self.sat[y2][x1] - self.sat[y1][x2] + self.sat[y1][x1]
 
 import heapq
